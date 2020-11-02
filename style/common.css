@@ -1,0 +1,71 @@
+/*  기본 레이아웃*/
+body {
+    display: flex;
+    flex-flow: row wrap;
+
+}
+.app-header-container,
+.app-main, 
+.app-footer-container {
+    width: 100%;
+
+}
+/* header*/
+.app-header-container {
+    background-color: yellow;
+}
+.app-header {
+    background-color: pink;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+/* common header*/
+@media all and (max-width:767px) {
+    /* mobile header*/
+    /* hamburger menu */
+    .is-open-menu {
+        width:50px;
+        height:50px;
+        background-color: transparent;
+        padding: 0;
+    }
+    .is-open-menu .ir {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        background: violet url(../images/button-navigation.svg) no-repeat 50% 50%;
+    }
+    /* mobile navigation */
+    .app-navigation {
+        display:none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: lightgreen;
+    }
+
+}
+
+@media all and (min-width:768px) {
+    /* desktop header*/
+    .app-header-container {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+    }
+    .app-header {
+        width: 768px;
+    }
+    .is-open-menu, .is-close-menu {
+        display: none;
+    }
+    /* desktop navigation*/
+    .app-navigation ul {
+        display: flex;
+        flex-flow: row nowrap;
+    }
+}
