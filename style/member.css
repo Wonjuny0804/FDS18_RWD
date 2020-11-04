@@ -35,7 +35,7 @@
 
 .member-id, .member-password {
     height: 48px;
-    border-bottom: 1px solid currentColor;
+   
     position: relative;
 }
 .member-id label, 
@@ -44,19 +44,35 @@
     left: 0.5em;
     top: 15px;
     font-size: 1.8rem; 
+    transition: all 0.2s;
 }
 .member-id--error ,
-.member-password--error,
-.button-password {
+.member-password--error {
     display: none;
+}
+.member-form .button-password {
+
+    display: none;
+    position: absolute;
+    z-index: 10;
+    top: 15px;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    right: 0;
+            
 }
 .member-id input,
 .member-password input {
+    border: 0;
     padding: 0 1em;
     color: currentColor;
     width: 100%;
-    height: 100%;
+    height: 48px;
     background-color: transparent;
+    border-bottom: 1px solid currentColor;
 }
 
 
@@ -156,6 +172,58 @@
     background-image: url(../images/icon-arrow-white.svg);
 }
 
+
+/* 공통 멤버 폼 상태 디자인 이메일 창 valid, in-valid */
+/*
+
+*/
+/* valid */
+.is--focus label,
+.is--valid label,
+.is--invalid label {
+    font-size: 1.3rem;
+    transform: translate(-0.5em, -15px);
+}
+.member-form .is--invalid {
+    height: 70px;   
+}
+.member-form .is--invalid [role="alert"]{
+    display: block;
+    margin-top: 5px;
+}
+.member-form .is-valid,
+.member-form .is--invalid {
+    background-repeat:no-repeat;
+    background-position: 100% 20px;
+}   
+.memeber-form .is--valid {
+    background-image: url(../images/icon-checked.svg);
+}
+.member-form .is--invalid {
+    background-image: url(../images/icon-warning.svg);
+}
+.is--focus .button-password {
+    display: block;
+}
+
+
+.member-form .button-password .ir {
+    display: block;
+    width: inherit;
+    height: inherit;
+    background: url(../images/icon-visible.svg) no-repeat 50% 50%;
+  }
+.member-form .is--visible .button-password .ir {
+    background: url(../images/icon-invisible.svg) no-repeat 50% 50%;
+}
+.member-form .is--invalid .button-password{
+    right: 15px;
+}
+/* 이메일, 패스워드 focus */
+.is--focus :focus {
+    font-size: 1.3rem;
+    float: left;
+}
 @media all and (min-width: 767px){
     /* mobile */
     
