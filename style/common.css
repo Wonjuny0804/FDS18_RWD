@@ -1,3 +1,4 @@
+/* common header*/
 /*  기본 레이아웃*/
 body {
     display: flex;
@@ -29,7 +30,68 @@ body {
     display: block;
     font-size: 14px;
 }
-/* common header*/
+
+/*  공통 푸터 */
+.app-footer-container {
+    background-color: var(--theme-dark);
+    color: var(--theme-disable);
+    text-align: center;
+    display: flex;
+}
+.app-footer{
+    font-size: 1.2rem;  
+    display: flex;
+    flex-flow: row wrap;
+    text-align: center;
+}
+.footer-brand {
+    border-top: 1px solid #fff;
+    padding: 20px 0;
+}
+.app-footer > * {
+    width: 100%;
+}
+.address {
+    font-size: 1.1rem;
+    font-style: normal;
+    padding: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+.address span {
+    margin: 10px 0;
+}
+.copyright {
+    font-size: 1.1rem;
+}
+.guide-list{
+    order: -1;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    color: #878787;
+    font-size: 1.2rem;
+    line-height: 2em;
+    padding: 15px 0;
+}
+.guide-list li {
+    margin: 0 5px;
+}
+.guide-list a {
+    display: block;
+    padding: 5px 0;
+}
+
+/* 공통 위로가기 버튼 */
+.button-goToTop {
+    background-color: transparent;
+    border: none;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+}
+
 @media all and (max-width:767px) {
     /* mobile header*/
     /* mobile logo */
@@ -91,8 +153,28 @@ body {
     .is--active .app-navigation {
         transform: none;
     }
-}
 
+
+    /* mobile footer */
+    .guide-list{
+
+    }
+    .address,
+    .copyright {
+        padding: 0 20px;
+    }
+    .copyright {
+        font-size: 1.1rem;
+        display: block;
+        margin-top: 15px;
+        margin-bottom: 30px;
+    }
+    .button-goToTop {
+        bottom: 15px;
+        right: 15px;
+    }
+    
+}
 @media all and (min-width:768px) {
     /* desktop header*/
     .app-header-container {
@@ -115,5 +197,25 @@ body {
         margin-left: 8px;
         color: #24388D;
 
+    }
+    /*desktop footer*/
+    .app-footer-container {
+        position: relative;
+    }
+    .app-footer-container::before{
+        content:"";;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        border-top: 1px solid;
+    }
+    .app-footer {
+        width: 740px;
+        margin: 0 auto;
+    }
+    .button-goToTop {
+        bottom: 50px;
+        right: 50px;
     }
 }
