@@ -185,6 +185,8 @@
     top: 15px;
     right: 15px;
 }
+
+
 @media all and (max-width: 767px){
     /* 모바일 추천 음료  */
     .ediya-recommend-container {
